@@ -1,0 +1,143 @@
+deep learning, rl, math
+python
+numpy
+pytorch
+hugging face
+agents: langchain
+backnend: fastapi
+infra : docker, kubernetes, aws
+vc: git/github
+
+
+
+just learn some sql and dsa besides
+-----------------------
+
+-linaer in weights, non linear weight; lienar in features non linear in features; non linear in features, non linear in weights
+-why not polynomial approximation instead of deep learning ?
+    --representation problem maybe
+    --
+
+-----------------------------------
+05/09/26:
+
+u have two classes but they are not linear separable u don't know 
+what's the underlying structure looks like
+but clerly separable in other ways without overcompicating
+like 4 u's in four directions 
+what do u do 
+
+how do u solve it using neural networks:
+maybe with logistic u have to feature engineer which is hard to find wihich polynimial works best for the given data
+decision trees, random forests  how ??
+
+unsupervised ???
+like k means
+give data find separate 2 classes (can it work if the data is non linear ??)
+might be tough
+
+
+-to classify any boolean fucntion the nerural net(mlp) is just remembering everypoint that's it(see mitesh khapra slides)
+
+
+
+DO IT=====================
+---it is really possible to complete
+first 7 lectures in by the end of sunday
+
+-------------------------------------------------------------------------------------------------------------------
+06-09-26:
+i would say hessian is a jacobian of  a fucntiont that takes vector
+inputs and vectors ouput which is the gradient of the original single output funciton
+
+
+-7:10 pm
+-- talked with him
+-- if a bot can do shit what will u be dng
+
+-- effectronics
+
+------------
+07-09-2026
+
+it was fucking easy in linear models for the weight update on
+whole batch at once because i had update formula in 
+matrix forms on whole dataset 
+and i can set code that using numpy
+
+but in nerual nets u have lot of weights 
+with differnt derivates and at differnt palces
+function of funcions(compositions) and 
+hard to represnt that in one whole matrix
+algebra form to update
+
+so backpropagation helps us here but can i 
+build a flexible/generalized algo without computational graph
+yes maybe let me figure it out:
+    -do forward pass  and calculate loss with same parameters for each example
+    -accumulate gradients for every example in backward pass, update once for given batch of examples
+    -ok what's the api
+    -user gives u  # inpus, layers, neurons in each l, activations,  outputs, loss function and epochs
+    -do forward pass for each example ok 
+    -backpropagate and have to accumulate gradients for each example
+    -then update at a time for whole batch
+    -now forward pass might be easy
+    -will it be ??
+    -what do i send to backward pass?
+    -so should i have layer objects that remember preactivations and activations
+    -for each layer during forward pass
+    -send them to backward
+    -it acts from the last layer calling backward and accumulating gradints for its weights
+    -and passes it preactivations gradient with respect to loss to previous layer
+    -read that blog and try to solve else just chatgpt solution
+    -do u want to write code is what it all boils down to man come on
+
+
+
+
+----
+08-09-26
+-learn these
+ -sql
+ -dsa
+ -ur subject(bro ur wasting so much time man this is not how it shoudl go)
+ -problem is nothing is enforcing do u want to do something apart from
+ -what motivation is there bigger than money brother come on
+
+wasted dude, don't watch shorts and theranos and elizabith holmes why do u need that shit??
+
+--------------------
+09-09-26/wednesday
+
+-watched the  grand budapest hotel movie
+-ralph fiennes
+-liam neeson
+-ben kingsley
+-chritoph waltz
+
+end didn't study much
+-----------------------
+10-09-26
+    write
+        -sgd is updating same weights but differnt function in each update  aw1+bw2+cw3 in one instance and pw1+qw2+rw3
+            -in another
+            -then why it works ??
+            -u r changing the loss function it self for every example
+            -but updating the common weights on every example
+        -toatal derivate rule as jacobian, show
+        -
+
+        -man i'm sorry i've wasted all 6 hours after waking up and whole night before sleeping just scrolling
+        -we are not scrolling and doing anything mindlessly from now on come on
+        -fix ur attention span it's constantly trying to look for something new
+        -which the shorts and reels might have effected u to expect in such way
+
+
+------------------------
+11-09-26
+
+wasted
+-------------------------
+12-09-26
+wrote that squential neural networks
+
