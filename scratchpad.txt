@@ -163,6 +163,30 @@ wrote that squential neural networks
     -ur sticking to only one thing and getting distracted
     -which is not good for u
     -u need to be mindful about ur eating also
-    
+
+---------------------------
+16-09-26
+   -energy, science, motors
+   -optimization algorithms:
+    -
+
+
+-----------------------
+26-09-26
+    -focus:
+        micrograd, pytorch, makemore 1, 2
+
+    -passively watching micrograd video
+
+---------------------
+27-09-26
+    -3:20 a.m
+    just finished watching micrograd video
+    maybe sleep and finish remaining later
+    --TODO 
+        -build microgead, learn pytorch
+        -makemore 1 and 2 (code)
+        
+
 
 
