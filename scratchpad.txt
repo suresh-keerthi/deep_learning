@@ -186,7 +186,7 @@ wrote that squential neural networks
     --TODO 
         -build microgead, learn pytorch
         -makemore 1 and 2 (code)
-        
+                    
 
 
 
