@@ -186,7 +186,18 @@ wrote that squential neural networks
     --TODO 
         -build microgead, learn pytorch
         -makemore 1 and 2 (code)
-                    
+
+
+
+------------------------
+28-09-26
+    -2:50 a.m
+    -coded microgead engine(previous day)
+    -took bath now
+    -random stuff for 1hr
+    -going to sleep
+
+     
 
 
 
