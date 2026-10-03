@@ -197,7 +197,35 @@ wrote that squential neural networks
     -random stuff for 1hr
     -going to sleep
 
-     
+-----------------------------
+how does a agent and then swarm of agents work
+    -llm generates text
+    -a computer program is create mostly by writing code(text)
+        either a program that can be compiled or a program that is interpreted(which already existing program reads and runs)
+    -humans write code to do many jobs on the computer
+    -most humans just interact  with existing software which ofcourse they didn't write
+    -an llm takes text gives out text(any kind of text in any format that u might require)
+    -u can write programs that takes actions based on that generated text
+    -what does agent replace?
+        -writing code to do diffent works using computer
+        -interacting with already existing software to do work(it need to make different decisions) 
+    -1. writing to code (larger software) is straight forward
+        -u prompt it it writes code 
+        -u suggest changes it edits
+        -u suggest keep doing until u get desired result
+        -if the target is veriable like has some preformance metric as target it can test and edit
+            -the code itself try differnt things and experiments by itself until it reaches a good result
+            -the vast amount of knowledge it has and the amount of agency and tool access gives it a large advantage
+        -how does it work under the hood through a cs perspective??
+            -finish?
+    -2. interacting with already existing software(computer use)
+        -let's include what all works it can do just by prompt by text or audio
+        -and from a computer science perspective how that works like
+        -what how does it interact, what programs does it run what system calls does it use
+        -how does actually interact without the program appearing on the monitor also explain with examples
+            -finish?
 
+----------------------------------------------------
 
-
+3-10-2026:
+        
