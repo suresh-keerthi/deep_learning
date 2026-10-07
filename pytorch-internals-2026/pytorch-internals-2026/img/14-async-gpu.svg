@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="The CPU queues four kernels quickly while the GPU runs them later; item() makes the CPU wait"><title>The CPU queues four kernels quickly while the GPU runs them later; item() makes the CPU wait</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#EE4C2C"/></marker><marker id="m1" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#55607A"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">GPU work is queued, not run immediately</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Python gets ahead of the GPU until something forces it to wait.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">14 / 26</text>
+<text x="56" y="224" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">CPU (Python)</text>
+<text x="56" y="344" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">GPU (stream)</text>
+<rect x="220" y="196" width="940" height="56" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<rect x="220" y="316" width="940" height="56" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<rect x="232" y="204" width="44" height="40" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2"/>
+<text x="254" y="228.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">k1</text>
+<rect x="284" y="204" width="44" height="40" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2"/>
+<text x="306" y="228.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">k2</text>
+<rect x="336" y="204" width="44" height="40" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2"/>
+<text x="358" y="228.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">k3</text>
+<rect x="388" y="204" width="44" height="40" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2"/>
+<text x="410" y="228.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">k4</text>
+<rect x="450" y="204" width="190" height="40" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="2"/>
+<text x="545" y="228.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">more Python code</text>
+<rect x="660" y="204" width="290" height="40" rx="4" fill="#FDEFCB" stroke="#B26A00" stroke-width="2"/>
+<text x="805" y="228.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">loss.item(): waits for GPU</text>
+<rect x="970" y="204" width="180" height="40" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="2"/>
+<text x="1060" y="228.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">continues</text>
+<rect x="250" y="324" width="150" height="40" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="325" y="348.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">k1</text>
+<rect x="400" y="324" width="120" height="40" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="460" y="348.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">k2</text>
+<rect x="520" y="324" width="240" height="40" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="640" y="348.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">k3</text>
+<rect x="760" y="324" width="190" height="40" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="855" y="348.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">k4</text>
+<polyline points="254,246 262,322" fill="none" stroke="#EE4C2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4" marker-end="url(#m0)"/>
+<polyline points="306,246 412,322" fill="none" stroke="#EE4C2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4" marker-end="url(#m0)"/>
+<polyline points="358,246 532,322" fill="none" stroke="#EE4C2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4" marker-end="url(#m0)"/>
+<polyline points="410,246 772,322" fill="none" stroke="#EE4C2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4" marker-end="url(#m0)"/>
+<polyline points="220,430 1160,430" fill="none" stroke="#55607A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m1)"/>
+<text x="1160" y="458" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">time</text>
+<circle cx="66" cy="496" r="4" fill="#EE4C2C"/>
+<text x="82" y="502" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Python returns as soon as the kernel is queued, long before it finishes.</text>
+<circle cx="66" cy="530" r="4" fill="#EE4C2C"/>
+<text x="82" y="536" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">.item(), .cpu() and print(tensor) must wait for the GPU, so they act as sync points.</text>
+<circle cx="66" cy="564" r="4" fill="#EE4C2C"/>
+<text x="82" y="570" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">To time GPU code, call torch.cuda.synchronize() first. Otherwise you time only the queueing.</text>
+<rect x="56" y="614" width="1168" height="56" rx="4" fill="#FDEFCB" stroke="#B26A00" stroke-width="2"/>
+<text x="76" y="648" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Many tiny kernels leave gaps on the GPU. CUDA graphs and torch.compile exist partly to close those gaps.</text></svg>

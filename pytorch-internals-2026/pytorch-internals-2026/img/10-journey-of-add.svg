@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Seven steps from a + b in Python to a kernel running on the device"><title>Seven steps from a + b in Python to a kernel running on the device</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#101828"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">The journey of a + b</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Seven steps, from your script to the hardware and back.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">10 / 26</text>
+<rect x="62" y="140" width="265" height="178" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2.5"/>
+<circle cx="86" cy="168" r="15" fill="#2F5BEA"/>
+<text x="86" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" xml:space="preserve">1</text>
+<text x="110" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Python call</text>
+<text x="78" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">a + b becomes</text>
+<text x="78" y="226.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Tensor.__add__, which is</text>
+<text x="78" y="247.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">implemented in C++.</text>
+<text x="78" y="289" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">torch/csrc/autograd/generated/</text>
+<text x="78" y="306" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">python_variable_methods.cpp</text>
+<polyline points="329,229 357,229" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="359" y="140" width="265" height="178" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="2.5"/>
+<circle cx="383" cy="168" r="15" fill="#9AA6BD"/>
+<text x="383" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" xml:space="preserve">2</text>
+<text x="407" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Operator entry</text>
+<text x="375" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Arguments are parsed, the</text>
+<text x="375" y="226.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">GIL is released, and</text>
+<text x="375" y="247.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">at::_ops::add_Tensor::call</text>
+<text x="375" y="268.1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">runs.</text>
+<text x="375" y="289" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">aten/src/ATen/ (generated)</text>
+<text x="375" y="306" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Operators_*.cpp</text>
+<polyline points="626,229 654,229" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="656" y="140" width="265" height="178" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2.5"/>
+<circle cx="680" cy="168" r="15" fill="#EE4C2C"/>
+<text x="680" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" xml:space="preserve">3</text>
+<text x="704" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Dispatcher</text>
+<text x="672" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Collects dispatch keys from</text>
+<text x="672" y="226.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">the inputs and picks the</text>
+<text x="672" y="247.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">highest priority one.</text>
+<text x="672" y="289" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">aten/src/ATen/core/dispatch/</text>
+<text x="672" y="306" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Dispatcher.h</text>
+<polyline points="923,229 951,229" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="953" y="140" width="265" height="178" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2.5"/>
+<circle cx="977" cy="168" r="15" fill="#6941C6"/>
+<text x="977" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" xml:space="preserve">4</text>
+<text x="1001" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Autograd layer</text>
+<text x="969" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Records a grad_fn if any</text>
+<text x="969" y="226.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">input needs gradients, then</text>
+<text x="969" y="247.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">redispatches lower.</text>
+<text x="969" y="289" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">torch/csrc/autograd/generated/</text>
+<text x="969" y="306" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">VariableType_*.cpp</text>
+<polyline points="1085,320 1085,350 194,350 194,378" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="62" y="382" width="265" height="190" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2.5"/>
+<circle cx="86" cy="410" r="15" fill="#2F5BEA"/>
+<text x="86" y="416" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" xml:space="preserve">5</text>
+<text x="110" y="416" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Backend kernel</text>
+<text x="78" y="448" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Structured kernel add_out:</text>
+<text x="78" y="468.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">check shapes, allocate the</text>
+<text x="78" y="489.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">result, call add_stub.</text>
+<text x="78" y="543" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">aten/src/ATen/native/</text>
+<text x="78" y="560" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">BinaryOps.cpp</text>
+<polyline points="329,477 357,477" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="359" y="382" width="265" height="190" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="2.5"/>
+<circle cx="383" cy="410" r="15" fill="#9AA6BD"/>
+<text x="383" y="416" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" xml:space="preserve">6</text>
+<text x="407" y="416" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Device loop</text>
+<text x="375" y="448" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">CPU: a vectorized loop</text>
+<text x="375" y="468.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">driven by TensorIterator.</text>
+<text x="375" y="489.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">CUDA: a kernel launched on</text>
+<text x="375" y="510.1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">the current stream.</text>
+<text x="375" y="560" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">native/cpu/ and native/cuda/</text>
+<polyline points="626,477 654,477" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="656" y="382" width="265" height="190" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2.5"/>
+<circle cx="680" cy="410" r="15" fill="#0E9384"/>
+<text x="680" y="416" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" xml:space="preserve">7</text>
+<text x="704" y="416" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Result</text>
+<text x="672" y="448" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">A new tensor travels back</text>
+<text x="672" y="468.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">up through the layers and</text>
+<text x="672" y="489.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">reaches Python as a</text>
+<text x="672" y="510.1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">torch.Tensor.</text>
+<rect x="953" y="382" width="265" height="190" rx="4" fill="#FDEFCB" stroke="#B26A00" stroke-width="2"/>
+<text x="1085.5" y="439.675" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Where is this code?</text>
+<text x="1085.5" y="465.625" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">Many of these files are</text>
+<text x="1085.5" y="485.875" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">generated. They only exist</text>
+<text x="1085.5" y="506.125" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">in your build directory</text>
+<text x="1085.5" y="526.375" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">after you build PyTorch.</text>
+<text x="62" y="618" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Autograd sits above the backend, so a backend kernel never has to know about gradients.</text></svg>

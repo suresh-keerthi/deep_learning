@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="A 3 by 2 tensor shown as a table, as a metadata card, and as six cells of raw memory"><title>A 3 by 2 tensor shown as a table, as a metadata card, and as six cells of raw memory</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#101828"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">A tensor is data plus a description of how to read it</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">The description is small. The data is a plain block of memory.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">4 / 26</text>
+<text x="80" y="168" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">What you picture</text>
+<rect x="80" y="188" width="70" height="70" rx="2" fill="#FFFFFF" stroke="#2F5BEA" stroke-width="2"/>
+<text x="115" y="232" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">1</text>
+<rect x="150" y="188" width="70" height="70" rx="2" fill="#FFFFFF" stroke="#2F5BEA" stroke-width="2"/>
+<text x="185" y="232" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">2</text>
+<rect x="80" y="258" width="70" height="70" rx="2" fill="#FFFFFF" stroke="#2F5BEA" stroke-width="2"/>
+<text x="115" y="302" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">3</text>
+<rect x="150" y="258" width="70" height="70" rx="2" fill="#FFFFFF" stroke="#2F5BEA" stroke-width="2"/>
+<text x="185" y="302" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">4</text>
+<rect x="80" y="328" width="70" height="70" rx="2" fill="#FFFFFF" stroke="#2F5BEA" stroke-width="2"/>
+<text x="115" y="372" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">5</text>
+<rect x="150" y="328" width="70" height="70" rx="2" fill="#FFFFFF" stroke="#2F5BEA" stroke-width="2"/>
+<text x="185" y="372" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">6</text>
+<text x="80" y="430" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">a 3 by 2 table</text>
+<rect x="340" y="170" width="470" height="300" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<rect x="340" y="170" width="470" height="46" rx="4" fill="#FDE4DD" stroke="#101828" stroke-width="2"/>
+<text x="360" y="201" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Tensor object</text>
+<text x="792" y="201" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">small, cheap to copy</text>
+<text x="364" y="258" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">sizes</text>
+<text x="580" y="258" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">(3, 2)</text>
+<text x="364" y="294" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">strides</text>
+<text x="580" y="294" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">(2, 1)</text>
+<text x="364" y="330" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">storage_offset</text>
+<text x="580" y="330" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">0</text>
+<text x="364" y="366" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">dtype</text>
+<text x="580" y="366" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">float32</text>
+<text x="364" y="402" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">device</text>
+<text x="580" y="402" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">cuda:0</text>
+<text x="364" y="438" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">layout</text>
+<text x="580" y="438" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">strided</text>
+<polyline points="575,470 575,532" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<text x="592" y="508" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">points to</text>
+<rect x="340" y="536" width="78" height="56" rx="2" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="379" y="571" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">1</text>
+<rect x="418" y="536" width="78" height="56" rx="2" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="457" y="571" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">2</text>
+<rect x="496" y="536" width="78" height="56" rx="2" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="535" y="571" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">3</text>
+<rect x="574" y="536" width="78" height="56" rx="2" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="613" y="571" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">4</text>
+<rect x="652" y="536" width="78" height="56" rx="2" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="691" y="571" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">5</text>
+<rect x="730" y="536" width="78" height="56" rx="2" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="769" y="571" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#101828" text-anchor="middle" xml:space="preserve">6</text>
+<text x="379" y="614" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">+0</text>
+<text x="457" y="614" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">+4</text>
+<text x="535" y="614" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">+8</text>
+<text x="613" y="614" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">+12</text>
+<text x="691" y="614" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">+16</text>
+<text x="769" y="614" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">+20</text>
+<text x="340" y="640" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">float32 takes 4 bytes per element, so cell k starts at byte 4k</text>
+<text x="830" y="560" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Storage</text>
+<text x="830" y="584" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">raw bytes, no shape</text>
+<rect x="850" y="170" width="374" height="300" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2"/>
+<text x="872" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Why split them?</text>
+<text x="872" y="244" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Transpose, slice and reshape</text>
+<text x="872" y="270.1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">only rewrite the description.</text>
+<text x="872" y="296.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve"></text>
+<text x="872" y="322.3" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">The numbers stay where they are,</text>
+<text x="872" y="348.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">so these operations are free.</text></svg>

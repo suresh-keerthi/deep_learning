@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="A Python function split by Dynamo into two graphs with a graph break at item(), and the guards that protect them"><title>A Python function split by Dynamo into two graphs with a graph break at item(), and the guards that protect them</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Dynamo watches your function and records guards</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">It captures what it can and runs the rest as normal Python.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">16 / 26</text>
+<rect x="56" y="140" width="640" height="316" rx="6" fill="#0F172A"/>
+<text x="76" y="179" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">def f(x, flag):</text>
+<rect x="64" y="190" width="624" height="34" rx="3" fill="#134E4A"/>
+<text x="76" y="215" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">    a = x * 2</text>
+<rect x="64" y="226" width="624" height="34" rx="3" fill="#134E4A"/>
+<text x="76" y="251" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">    b = a.relu()</text>
+<rect x="64" y="262" width="624" height="34" rx="3" fill="#134E4A"/>
+<text x="76" y="287" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">    if flag:</text>
+<rect x="64" y="298" width="624" height="34" rx="3" fill="#134E4A"/>
+<text x="76" y="323" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">        b = b + 1</text>
+<rect x="64" y="334" width="624" height="34" rx="3" fill="#5B3A0A"/>
+<text x="76" y="359" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">    n = b.sum().item()</text>
+<rect x="64" y="370" width="624" height="34" rx="3" fill="#5B3A0A"/>
+<text x="76" y="395" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">    print(n)</text>
+<rect x="64" y="406" width="624" height="34" rx="3" fill="#134E4A"/>
+<text x="76" y="431" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">    return b / n</text>
+<rect x="500" y="193" width="79.86" height="26" rx="13" fill="#D5F1EC" stroke="#0E9384" stroke-width="1.5"/>
+<text x="539.93" y="210.9" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#101828" text-anchor="middle" xml:space="preserve">graph 1</text>
+<rect x="500" y="337" width="111.78" height="26" rx="13" fill="#FDEFCB" stroke="#B26A00" stroke-width="1.5"/>
+<text x="555.89" y="354.9" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#101828" text-anchor="middle" xml:space="preserve">graph break</text>
+<rect x="500" y="409" width="79.86" height="26" rx="13" fill="#D5F1EC" stroke="#0E9384" stroke-width="1.5"/>
+<text x="539.93" y="426.9" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#101828" text-anchor="middle" xml:space="preserve">graph 2</text>
+<rect x="730" y="140" width="494" height="176" rx="4" fill="#FFFFFF" stroke="#0E9384" stroke-width="2.5"/>
+<text x="750" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Guards, checked on every call</text>
+<text x="750" y="206" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">x.shape == (8, 64)</text>
+<text x="750" y="230.65" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">x.dtype == torch.float32</text>
+<text x="750" y="255.3" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">x.device == cuda:0</text>
+<text x="750" y="279.95" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">flag is True</text>
+<text x="730" y="346" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">All guards pass: reuse the compiled code. One</text>
+<text x="730" y="369.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">fails: compile again and keep both versions, up to</text>
+<text x="730" y="393.6" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">a limit.</text>
+<rect x="730" y="420" width="494" height="150" rx="4" fill="#FDEFCB" stroke="#B26A00" stroke-width="2.5"/>
+<text x="750" y="454" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Why a graph break?</text>
+<text x="750" y="482" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">The value n lives on the GPU, so Dynamo cannot</text>
+<text x="750" y="504.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">know it while tracing. It compiles what came</text>
+<text x="750" y="526.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">before, runs that line in Python, then starts a</text>
+<text x="750" y="549.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">new graph.</text>
+<rect x="56" y="484" width="640" height="120" rx="6" fill="#0F172A"/>
+<text x="74" y="513.6" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">TORCH_LOGS=graph_breaks,recompiles python train.py</text>
+<text x="74" y="537.6" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve"></text>
+<text x="74" y="561.6" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">torch.compile(f, fullgraph=True)  # error, not a break</text>
+<text x="56" y="640" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">fullgraph=True turns every silent break into an error you can fix.</text></svg>

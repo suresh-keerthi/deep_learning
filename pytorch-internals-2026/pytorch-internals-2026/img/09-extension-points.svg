@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Three axes of device, layout and dtype plus two extra ways to extend tensors: subclasses and wrappers"><title>Three axes of device, layout and dtype plus two extra ways to extend tensors: subclasses and wrappers</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Five ways to extend what a tensor can be</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Three axes in C++, then Python subclasses and plain wrappers.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">9 / 26</text>
+<rect x="56" y="150" width="360" height="296" rx="4" fill="#FFFFFF" stroke="#2F5BEA" stroke-width="2.5"/>
+<rect x="56" y="150" width="360" height="74" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2.5"/>
+<text x="76" y="186" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Device</text>
+<text x="76" y="212" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">where the memory lives</text>
+<circle cx="82" cy="256" r="4" fill="#2F5BEA"/>
+<text x="98" y="262" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">cpu</text>
+<circle cx="82" cy="287" r="4" fill="#2F5BEA"/>
+<text x="98" y="293" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">cuda (also AMD ROCm)</text>
+<circle cx="82" cy="318" r="4" fill="#2F5BEA"/>
+<text x="98" y="324" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">mps (Apple GPUs)</text>
+<circle cx="82" cy="349" r="4" fill="#2F5BEA"/>
+<text x="98" y="355" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">xpu (Intel GPUs)</text>
+<circle cx="82" cy="380" r="4" fill="#2F5BEA"/>
+<text x="98" y="386" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">meta (shapes only, no memory)</text>
+<circle cx="82" cy="411" r="4" fill="#2F5BEA"/>
+<text x="98" y="417" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">PrivateUse1 (out-of-tree chips)</text>
+<rect x="452" y="150" width="360" height="296" rx="4" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="2.5"/>
+<rect x="452" y="150" width="360" height="74" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2.5"/>
+<text x="472" y="186" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Layout</text>
+<text x="472" y="212" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">how to interpret the memory</text>
+<circle cx="478" cy="256" r="4" fill="#EE4C2C"/>
+<text x="494" y="262" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">strided (the default)</text>
+<circle cx="478" cy="287" r="4" fill="#EE4C2C"/>
+<text x="494" y="293" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">sparse: COO, CSR, CSC</text>
+<circle cx="478" cy="318" r="4" fill="#EE4C2C"/>
+<text x="494" y="324" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">nested and jagged</text>
+<circle cx="478" cy="349" r="4" fill="#EE4C2C"/>
+<text x="494" y="355" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">mkldnn blocked</text>
+<rect x="848" y="150" width="360" height="296" rx="4" fill="#FFFFFF" stroke="#0E9384" stroke-width="2.5"/>
+<rect x="848" y="150" width="360" height="74" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2.5"/>
+<text x="868" y="186" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Dtype</text>
+<text x="868" y="212" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">what each element is</text>
+<circle cx="874" cy="256" r="4" fill="#0E9384"/>
+<text x="890" y="262" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">float32, float64</text>
+<circle cx="874" cy="287" r="4" fill="#0E9384"/>
+<text x="890" y="293" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">float16, bfloat16</text>
+<circle cx="874" cy="318" r="4" fill="#0E9384"/>
+<text x="890" y="324" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">float8 variants</text>
+<circle cx="874" cy="349" r="4" fill="#0E9384"/>
+<text x="890" y="355" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">int8 to int64, bool</text>
+<circle cx="874" cy="380" r="4" fill="#0E9384"/>
+<text x="890" y="386" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">complex64, complex128</text>
+<circle cx="874" cy="411" r="4" fill="#0E9384"/>
+<text x="890" y="417" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">block-scaled fp8 and fp4</text>
+<text x="56" y="488" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Two more options, no new C++ needed</text>
+<rect x="56" y="505" width="570" height="150" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2"/>
+<text x="70" y="551.425" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Python tensor subclass</text>
+<text x="70" y="578.925" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Override __torch_dispatch__ to intercept every operator.</text>
+<text x="70" y="600.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">DTensor, FakeTensor, nested tensors and torchao's quantized</text>
+<text x="70" y="622.125" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">tensors work this way.</text>
+<rect x="654" y="505" width="570" height="150" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="2"/>
+<text x="668" y="551.425" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Wrapper class</text>
+<text x="668" y="578.925" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">A plain Python object that holds tensors. Good enough when</text>
+<text x="668" y="600.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">the thing you add never has to travel through autograd as a</text>
+<text x="668" y="622.125" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">tensor.</text></svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Three separate kernels make six trips to memory; one fused kernel makes two"><title>Three separate kernels make six trips to memory; one fused kernel makes two</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#2F5BEA"/></marker><marker id="m1" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#EE4C2C"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Why fusing kernels is faster</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Fewer trips to GPU memory, with the same math.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">17 / 26</text>
+<text x="80" y="156" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="26" font-weight="600" fill="#101828" text-anchor="start" xml:space="preserve">y = torch.relu(x * 2 + 1)</text>
+<rect x="56" y="190" width="564" height="440" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="2"/>
+<text x="76" y="228" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Eager: 3 kernels</text>
+<rect x="84" y="310" width="130" height="60" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="149" y="345.85" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">x * 2</text>
+<polyline points="119,496 119,374" fill="none" stroke="#2F5BEA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="179,374 179,496" fill="none" stroke="#EE4C2C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m1)"/>
+<rect x="270" y="310" width="130" height="60" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="335" y="345.85" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">+ 1</text>
+<polyline points="305,496 305,374" fill="none" stroke="#2F5BEA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="365,374 365,496" fill="none" stroke="#EE4C2C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m1)"/>
+<rect x="456" y="310" width="130" height="60" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="521" y="345.85" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">relu</text>
+<polyline points="491,496 491,374" fill="none" stroke="#2F5BEA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="551,374 551,496" fill="none" stroke="#EE4C2C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m1)"/>
+<rect x="80" y="500" width="510" height="48" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="2"/>
+<text x="335" y="529.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">GPU memory (far away, slow)</text>
+<text x="84" y="296" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#2F5BEA" text-anchor="start" xml:space="preserve">read</text>
+<text x="160" y="296" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#EE4C2C" text-anchor="start" xml:space="preserve">write</text>
+<text x="76" y="604" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">6 trips to memory</text>
+<rect x="660" y="190" width="564" height="440" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="2"/>
+<text x="680" y="228" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Fused: 1 kernel</text>
+<rect x="790" y="310" width="300" height="60" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2"/>
+<text x="940" y="345.85" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">relu(x * 2 + 1)</text>
+<polyline points="850,496 850,374" fill="none" stroke="#2F5BEA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="1030,374 1030,496" fill="none" stroke="#EE4C2C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m1)"/>
+<rect x="684" y="500" width="516" height="48" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="2"/>
+<text x="942" y="529.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">GPU memory</text>
+<text x="680" y="604" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="700" fill="#0E9384" text-anchor="start" xml:space="preserve">2 trips to memory</text>
+<text x="1200" y="604" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">temporaries stay on the chip</text>
+<text x="56" y="668" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Elementwise operators mostly wait on memory, not arithmetic. That is why fusion pays off.</text></svg>

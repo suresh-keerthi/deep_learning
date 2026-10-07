@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Two yaml files feed torchgen, which writes bindings, while you write the kernel in five steps"><title>Two yaml files feed torchgen, which writes bindings, while you write the kernel in five steps</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#101828"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Anatomy of an operator</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">You describe the operator in yaml. A generator writes the glue. You write the kernel.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">22 / 26</text>
+<rect x="56" y="140" width="300" height="110" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="206" y="177.6" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">native_functions.yaml</text>
+<text x="206" y="203.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">the schema, the backends, the</text>
+<text x="206" y="223.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">variants</text>
+<rect x="56" y="280" width="300" height="110" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2"/>
+<text x="206" y="327.725" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">derivatives.yaml</text>
+<text x="206" y="353.375" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">the backward formula</text>
+<polyline points="358,195 428,235" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="358,335 428,295" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="430" y="170" width="220" height="190" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2"/>
+<text x="540" y="238.775" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">torchgen</text>
+<text x="540" y="265.625" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">runs at build time and</text>
+<text x="540" y="285.875" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">writes the C++ and</text>
+<text x="540" y="306.125" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">Python glue</text>
+<polyline points="652,265 728,265" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="730" y="140" width="494" height="250" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="2"/>
+<text x="750" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Generated for you</text>
+<circle cx="758" cy="217" r="4" fill="#EE4C2C"/>
+<text x="772" y="222" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Python bindings: torch.add and Tensor.add</text>
+<circle cx="758" cy="251" r="4" fill="#EE4C2C"/>
+<text x="772" y="256" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">C++ entry points: at::_ops::add_Tensor</text>
+<circle cx="758" cy="285" r="4" fill="#EE4C2C"/>
+<text x="772" y="290" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Autograd kernels and Node classes</text>
+<circle cx="758" cy="319" r="4" fill="#EE4C2C"/>
+<text x="772" y="324" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Dispatcher registrations for each backend</text>
+<circle cx="758" cy="353" r="4" fill="#EE4C2C"/>
+<text x="772" y="358" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Type stubs (.pyi) for your editor</text>
+<text x="56" y="440" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">The part you write: the kernel</text>
+<rect x="62" y="462" width="215" height="130" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="169.5" y="500.162" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">1. Check</text>
+<text x="169.5" y="525.038" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">inputs and shapes,</text>
+<text x="169.5" y="544.612" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">with TORCH_CHECK or a</text>
+<text x="169.5" y="564.188" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">meta function</text>
+<polyline points="279,527 295,527" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="297" y="462" width="215" height="130" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="404.5" y="500.162" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">2. Allocate</text>
+<text x="404.5" y="525.038" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">the output tensor</text>
+<text x="404.5" y="544.612" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">(structured kernels do</text>
+<text x="404.5" y="564.188" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">it for you)</text>
+<polyline points="514,527 530,527" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="532" y="462" width="215" height="130" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="639.5" y="499.325" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">3. Dispatch on</text>
+<text x="639.5" y="520.575" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">dtype</text>
+<text x="639.5" y="545.45" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">AT_DISPATCH macros</text>
+<text x="639.5" y="565.025" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">pick the typed code</text>
+<polyline points="749,527 765,527" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="767" y="462" width="215" height="130" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="874.5" y="500.162" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">4. Parallelize</text>
+<text x="874.5" y="525.038" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">at::parallel_for on</text>
+<text x="874.5" y="544.612" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">CPU. CUDA is parallel</text>
+<text x="874.5" y="564.188" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">by design.</text>
+<polyline points="984,527 1000,527" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="1002" y="462" width="215" height="130" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="1109.5" y="500.162" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">5. Touch data</text>
+<text x="1109.5" y="525.038" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">TensorIterator,</text>
+<text x="1109.5" y="544.612" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">Vectorized,</text>
+<text x="1109.5" y="564.188" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">TensorAccessor</text>
+<text x="62" y="632" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Structured kernels handle steps 1 and 2 once, then generate the functional, in-place and out= versions.</text></svg>

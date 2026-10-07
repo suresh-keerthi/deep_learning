@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="A stack of dispatch layers from vmap at the top to the backend at the bottom, each redispatching downward"><title>A stack of dispatch layers from vmap at the top to the backend at the bottom, each redispatching downward</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#EE4C2C"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">The dispatcher is a stack of layers</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Each layer does its job, then hands the call to the layer below.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">11 / 26</text>
+<rect x="400" y="140" width="440" height="50" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2"/>
+<text x="620" y="170.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">vmap and functorch transforms</text>
+<rect x="400" y="200" width="440" height="50" rx="4" fill="#FDEFCB" stroke="#B26A00" stroke-width="2"/>
+<text x="620" y="230.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Autocast: mixed precision</text>
+<rect x="400" y="260" width="440" height="50" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2"/>
+<text x="620" y="290.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Autograd: record the graph</text>
+<rect x="400" y="320" width="440" height="50" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2"/>
+<text x="620" y="350.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">ADInplaceOrView: versions and views</text>
+<rect x="400" y="380" width="440" height="50" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2"/>
+<text x="620" y="410.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Functionalize: remove mutation</text>
+<rect x="400" y="440" width="440" height="50" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2"/>
+<text x="620" y="470.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Python: __torch_dispatch__</text>
+<rect x="400" y="500" width="440" height="50" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="2"/>
+<text x="620" y="530.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">BackendSelect: factory functions</text>
+<rect x="400" y="560" width="440" height="50" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="620" y="590.525" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Backend: CPU, CUDA, MPS, XPU, Meta</text>
+<polyline points="870,150 870,590" fill="none" stroke="#EE4C2C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<text x="884" y="170" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">highest</text>
+<text x="884" y="585" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">lowest</text>
+<text x="56" y="170" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Which layers run?</text>
+<text x="56" y="198" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Each tensor carries a set of</text>
+<text x="56" y="220.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">dispatch keys. A call takes the</text>
+<text x="56" y="242.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">union of its inputs' keys, adds</text>
+<text x="56" y="265.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">thread-local switches, and starts</text>
+<text x="56" y="287.6" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">at the highest priority key.</text>
+<text x="56" y="372" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">no_grad is just a switch</text>
+<text x="56" y="400" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">It removes the Autograd keys from</text>
+<text x="56" y="422.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">the set. Nothing else changes, so</text>
+<text x="56" y="444.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">those layers are skipped.</text>
+<text x="56" y="520" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" font-style="italic" xml:space="preserve">Simplified. The real list has</text>
+<text x="56" y="540" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" font-style="italic" xml:space="preserve">dozens of keys.</text>
+<rect x="940" y="140" width="284" height="316" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="958" y="172" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Redispatch</text>
+<text x="958" y="200" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">A layer calls the</text>
+<text x="958" y="222.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">dispatcher again with its</text>
+<text x="958" y="244.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">own key removed. That is</text>
+<text x="958" y="267.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">how layers compose.</text>
+<text x="958" y="330" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Python sits low</text>
+<text x="958" y="358" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">It is below Autograd, so a</text>
+<text x="958" y="380.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">__torch_dispatch__ subclass</text>
+<text x="958" y="402.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">sees the backward operators</text>
+<text x="958" y="425.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">too.</text></svg>

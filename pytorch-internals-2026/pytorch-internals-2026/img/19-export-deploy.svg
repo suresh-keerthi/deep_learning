@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="From an nn.Module through torch.export to an ExportedProgram and then AOTInductor, ExecuTorch or vendor compilers"><title>From an nn.Module through torch.export to an ExportedProgram and then AOTInductor, ExecuTorch or vendor compilers</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#101828"/></marker><marker id="m1" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#0E9384"/></marker><marker id="m2" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#2F5BEA"/></marker><marker id="m3" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#55607A"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">From a model to something you can ship</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">torch.export captures the whole model once, with no Python left in it.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">19 / 26</text>
+<rect x="56" y="320" width="210" height="100" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="161" y="363.375" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">nn.Module</text>
+<text x="161" y="389.625" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">plus example inputs</text>
+<polyline points="268,370 306,370" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="308" y="320" width="210" height="100" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2"/>
+<text x="413" y="353.25" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="20" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">torch.export</text>
+<text x="413" y="379.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">traces the model into</text>
+<text x="413" y="399.75" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">one graph</text>
+<polyline points="520,370 558,370" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="560" y="240" width="310" height="260" rx="4" fill="#FFFFFF" stroke="#0E9384" stroke-width="2.5"/>
+<text x="580" y="276" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">ExportedProgram</text>
+<circle cx="588" cy="311" r="4" fill="#0E9384"/>
+<text x="602" y="316" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">a graph of ATen operators</text>
+<circle cx="588" cy="345" r="4" fill="#0E9384"/>
+<text x="602" y="350" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">parameters and buffers</text>
+<circle cx="588" cy="379" r="4" fill="#0E9384"/>
+<text x="602" y="384" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">input and output signature</text>
+<circle cx="588" cy="413" r="4" fill="#0E9384"/>
+<text x="602" y="418" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">shape constraints</text>
+<text x="580" y="470" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">run_decompositions() lowers to Core ATen</text>
+<rect x="560" y="530" width="310" height="70" rx="4" fill="#FDEFCB" stroke="#B26A00" stroke-width="2"/>
+<text x="715" y="548.3" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Which dimensions vary?</text>
+<text x="715" y="572.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">dynamic_shapes=, or @dynamic_spec</text>
+<text x="715" y="591.3" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">(new in 2.14)</text>
+<rect x="950" y="140" width="274" height="124" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2"/>
+<text x="1087" y="175.812" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">AOTInductor</text>
+<text x="1087" y="201.287" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">A .pt2 package of compiled</text>
+<text x="1087" y="220.862" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">kernels and weights. Loads</text>
+<text x="1087" y="240.438" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">from C++ with no Python.</text>
+<polyline points="872,370 948,202" fill="none" stroke="#0E9384" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m1)"/>
+<rect x="950" y="284" width="274" height="124" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="1087" y="310.025" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">ExecuTorch</text>
+<text x="1087" y="335.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">A .pte file for phones,</text>
+<text x="1087" y="355.075" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">wearables and</text>
+<text x="1087" y="374.65" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">microcontrollers. Part of</text>
+<text x="1087" y="394.225" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">PyTorch core since 2.13.</text>
+<polyline points="872,370 948,346" fill="none" stroke="#2F5BEA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m2)"/>
+<rect x="950" y="428" width="274" height="124" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="2"/>
+<text x="1087" y="463.812" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Vendor compilers</text>
+<text x="1087" y="489.287" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">For example Torch-TensorRT,</text>
+<text x="1087" y="508.862" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">which consume the exported</text>
+<text x="1087" y="528.438" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">graph.</text>
+<polyline points="872,370 948,490" fill="none" stroke="#55607A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m3)"/>
+<rect x="56" y="628" width="1168" height="44" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="640" y="654.875" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#55607A" text-anchor="middle" xml:space="preserve">TorchScript (torch.jit.script and trace) is the older route. It is deprecated and 2.14 now shows its warnings.</text></svg>

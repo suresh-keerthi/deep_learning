@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Timeline from May 2019 to September 2026 of the changes that matter most to this post"><title>Timeline from May 2019 to September 2026 of the changes that matter most to this post</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">What changed since 2019</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Eight milestones, from the original post to this September.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">26 / 26</text>
+<line x1="70" y1="370" x2="1210" y2="370" stroke="#101828" stroke-width="3" stroke-linecap="round"/>
+<circle cx="180" cy="370" r="9" fill="#2F5BEA" stroke="#FFFFFF" stroke-width="3"/>
+<line x1="180" y1="361" x2="180" y2="330" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round"/>
+<rect x="60" y="150" width="240" height="180" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="74" y="180" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#2F5BEA" text-anchor="start" xml:space="preserve">May 2019</text>
+<text x="74" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">The original post</text>
+<text x="74" y="234" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Variable wraps Tensor.</text>
+<text x="74" y="254.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Legacy TH kernels</text>
+<text x="74" y="275.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">written in C.</text>
+<circle cx="312" cy="370" r="9" fill="#2F5BEA" stroke="#FFFFFF" stroke-width="3"/>
+<line x1="312" y1="379" x2="312" y2="410" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round"/>
+<rect x="192" y="410" width="240" height="180" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="206" y="440" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#2F5BEA" text-anchor="start" xml:space="preserve">Around 2020</text>
+<text x="206" y="466" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">One tensor type</text>
+<text x="206" y="494" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Variable and Tensor</text>
+<text x="206" y="514.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">merge in C++. The c10</text>
+<text x="206" y="535.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">dispatcher replaces</text>
+<text x="206" y="556.1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Type.</text>
+<circle cx="444" cy="370" r="9" fill="#2F5BEA" stroke="#FFFFFF" stroke-width="3"/>
+<line x1="444" y1="361" x2="444" y2="330" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round"/>
+<rect x="324" y="150" width="240" height="180" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="338" y="180" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#2F5BEA" text-anchor="start" xml:space="preserve">Sept 2022</text>
+<text x="338" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">A foundation</text>
+<text x="338" y="234" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch moves to the</text>
+<text x="338" y="254.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Foundation under</text>
+<text x="338" y="275.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">the Linux Foundation.</text>
+<circle cx="576" cy="370" r="9" fill="#2F5BEA" stroke="#FFFFFF" stroke-width="3"/>
+<line x1="576" y1="379" x2="576" y2="410" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round"/>
+<rect x="456" y="410" width="240" height="180" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="470" y="440" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#2F5BEA" text-anchor="start" xml:space="preserve">March 2023</text>
+<text x="470" y="466" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">PyTorch 2.0</text>
+<text x="470" y="494" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">torch.compile arrives,</text>
+<text x="470" y="514.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">built on Dynamo and</text>
+<text x="470" y="535.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Inductor.</text>
+<circle cx="708" cy="370" r="9" fill="#EE4C2C" stroke="#FFFFFF" stroke-width="3"/>
+<line x1="708" y1="361" x2="708" y2="330" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round"/>
+<rect x="588" y="150" width="240" height="180" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="602" y="180" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">Late 2025</text>
+<text x="602" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">PyTorch 2.9</text>
+<text x="602" y="234" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Stable C++ ABI work,</text>
+<text x="602" y="254.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">symmetric memory,</text>
+<text x="602" y="275.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">FlexAttention beyond</text>
+<text x="602" y="296.1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">NVIDIA.</text>
+<circle cx="840" cy="370" r="9" fill="#EE4C2C" stroke="#FFFFFF" stroke-width="3"/>
+<line x1="840" y1="379" x2="840" y2="410" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round"/>
+<rect x="720" y="410" width="240" height="180" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="734" y="440" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">March 2026</text>
+<text x="734" y="466" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">PyTorch 2.11</text>
+<text x="734" y="494" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Differentiable</text>
+<text x="734" y="514.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">collectives and a</text>
+<text x="734" y="535.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">FlashAttention-4</text>
+<text x="734" y="556.1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">backend.</text>
+<circle cx="972" cy="370" r="9" fill="#EE4C2C" stroke="#FFFFFF" stroke-width="3"/>
+<line x1="972" y1="361" x2="972" y2="330" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round"/>
+<rect x="852" y="150" width="240" height="180" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="866" y="180" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">July 2026</text>
+<text x="866" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">PyTorch 2.13</text>
+<text x="866" y="234" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">ExecuTorch joins core. A</text>
+<text x="866" y="254.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">CuTeDSL kernel path.</text>
+<text x="866" y="275.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Named tensors removed.</text>
+<circle cx="1104" cy="370" r="9" fill="#EE4C2C" stroke="#FFFFFF" stroke-width="3"/>
+<line x1="1104" y1="379" x2="1104" y2="410" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round"/>
+<rect x="984" y="410" width="240" height="180" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="998" y="440" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">Sept 2026</text>
+<text x="998" y="466" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">PyTorch 2.14</text>
+<text x="998" y="494" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Rewritten NCCL backend</text>
+<text x="998" y="514.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">preview, @dynamic_spec,</text>
+<text x="998" y="535.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">torch.switch.</text>
+<text x="70" y="630" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#101828" text-anchor="start" xml:space="preserve">A single release now carries about 3,000 commits from about 500 contributors.</text>
+<text x="70" y="656" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch 2.13 had 3,328 commits from 526 contributors. PyTorch 2.14 had 2,995 from 487.</text></svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="The path of a pull request from issue to merge, plus the local build options for Python and C++ changes"><title>The path of a pull request from issue to merge, plus the local build options for Python and C++ changes</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#101828"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">How a change gets into PyTorch</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Start with an issue, not a pull request.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">25 / 26</text>
+<rect x="62" y="140" width="270" height="92" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="197" y="178.725" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Open an issue</text>
+<text x="197" y="204.375" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">describe the bug or the idea</text>
+<polyline points="334,186 355,186" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="357" y="140" width="270" height="92" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="492" y="168.6" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">AI triage</text>
+<text x="492" y="194.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">adds module labels so the</text>
+<text x="492" y="214.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">right people see it</text>
+<polyline points="629,186 650,186" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="652" y="140" width="270" height="92" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="787" y="178.725" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Marked actionable</text>
+<text x="787" y="204.375" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">a maintainer says: send a PR</text>
+<polyline points="924,186 945,186" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="947" y="140" width="270" height="92" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2"/>
+<text x="1082" y="168.6" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Open a PR</text>
+<text x="1082" y="194.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">link the issue in the</text>
+<text x="1082" y="214.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">description</text>
+<polyline points="1082,234 1082,262 169,262 169,288" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="62" y="292" width="215" height="96" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="169.5" y="322.95" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Pre-review</text>
+<text x="169.5" y="347.825" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">a quick check of the</text>
+<text x="169.5" y="367.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">direction</text>
+<polyline points="279,340 295,340" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="297" y="292" width="215" height="96" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="404.5" y="332.737" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Automated review</text>
+<text x="404.5" y="357.612" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">bots read the PR first</text>
+<polyline points="514,340 530,340" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="532" y="292" width="215" height="96" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="639.5" y="322.95" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Human review</text>
+<text x="639.5" y="347.825" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">a maintainer reads the</text>
+<text x="639.5" y="367.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">code</text>
+<polyline points="749,340 765,340" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="767" y="292" width="215" height="96" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="874.5" y="332.737" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">CI turns green</text>
+<text x="874.5" y="357.612" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">tests across devices</text>
+<polyline points="984,340 1000,340" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="1002" y="292" width="215" height="96" rx="4" fill="#FFFFFF" stroke="#101828" stroke-width="2"/>
+<text x="1109.5" y="322.95" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">@pytorchbot merge</text>
+<text x="1109.5" y="347.825" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">you comment, the bot</text>
+<text x="1109.5" y="367.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">lands it</text>
+<rect x="62" y="430" width="372" height="220" rx="4" fill="#FFFFFF" stroke="#0E9384" stroke-width="2.5"/>
+<text x="80" y="464" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Python-only change</text>
+<rect x="80" y="482" width="336" height="62" rx="6" fill="#0F172A"/>
+<text x="98" y="510.325" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">./tools/nightly.py checkout \</text>
+<text x="98" y="531.35" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">    -b my-branch</text>
+<text x="80" y="576" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Installs a nightly build. No compiling</text>
+<text x="80" y="596.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">at all.</text>
+<rect x="454" y="430" width="372" height="220" rx="4" fill="#FFFFFF" stroke="#2F5BEA" stroke-width="2.5"/>
+<text x="472" y="464" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">C++ change</text>
+<rect x="472" y="482" width="336" height="62" rx="6" fill="#0F172A"/>
+<text x="490" y="510.325" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">spin develop</text>
+<text x="472" y="576" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">ccache, ninja and a fast linker keep</text>
+<text x="472" y="596.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">rebuilds short. USE_CUDA=0 skips CUDA</text>
+<text x="472" y="617.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">for a minimal build.</text>
+<rect x="846" y="430" width="372" height="220" rx="4" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="2.5"/>
+<text x="864" y="464" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Before you push</text>
+<rect x="864" y="482" width="336" height="62" rx="6" fill="#0F172A"/>
+<text x="882" y="510.325" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">spin lint</text>
+<text x="882" y="531.35" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">spin test test/test_nn.py</text>
+<text x="864" y="576" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Read the AI policy. You are responsible</text>
+<text x="864" y="596.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">for everything you send.</text>
+<text x="62" y="672" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Source: CONTRIBUTING.md in the PyTorch repository, October 2026.</text></svg>

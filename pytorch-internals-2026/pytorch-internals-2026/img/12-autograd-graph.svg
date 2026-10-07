@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="A forward chain x, matmul, tanh, sum and the backward graph of nodes autograd builds alongside it"><title>A forward chain x, matmul, tanh, sum and the backward graph of nodes autograd builds alongside it</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#101828"/></marker><marker id="m1" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#6941C6"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Autograd records a graph while your code runs</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">No source rewriting. Each operator leaves a node behind.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">12 / 26</text>
+<text x="70" y="142" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Forward: what you write</text>
+<rect x="220" y="150" width="130" height="42" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="285" y="176.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">W (leaf)</text>
+<polyline points="285,193 285,224" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="70" y="226" width="110" height="56" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="125" y="260.175" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">x</text>
+<rect x="220" y="226" width="130" height="56" rx="4" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="2.5"/>
+<text x="285" y="259.85" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">x @ W</text>
+<rect x="390" y="226" width="110" height="56" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="445" y="260.175" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">h</text>
+<rect x="540" y="226" width="130" height="56" rx="4" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="2.5"/>
+<text x="605" y="259.85" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">tanh</text>
+<rect x="710" y="226" width="110" height="56" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="765" y="260.175" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">y</text>
+<rect x="860" y="226" width="130" height="56" rx="4" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="2.5"/>
+<text x="925" y="259.85" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">sum</text>
+<rect x="1030" y="226" width="110" height="56" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="1085" y="260.175" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">loss</text>
+<polyline points="182,254 216,254" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="352,254 386,254" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="502,254 536,254" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="672,254 706,254" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="822,254 856,254" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<polyline points="992,254 1026,254" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<text x="70" y="388" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Backward graph</text>
+<text x="70" y="410" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">(built for you)</text>
+<rect x="850" y="424" width="150" height="56" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2.5"/>
+<text x="925" y="457.2" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">SumBackward0</text>
+<line x1="925" y1="284" x2="925" y2="422" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5"/>
+<rect x="530" y="424" width="150" height="56" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2.5"/>
+<text x="605" y="457.2" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">TanhBackward0</text>
+<line x1="605" y1="284" x2="605" y2="422" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5"/>
+<rect x="210" y="424" width="150" height="56" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2.5"/>
+<text x="285" y="457.2" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">MmBackward0</text>
+<line x1="285" y1="284" x2="285" y2="422" stroke="#9AA6BD" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 5"/>
+<text x="935" y="360" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">each operator's grad_fn</text>
+<polyline points="848,452 684,452" fill="none" stroke="#6941C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m1)"/>
+<polyline points="528,452 364,452" fill="none" stroke="#6941C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m1)"/>
+<text x="766" y="442" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">next_functions</text>
+<text x="446" y="442" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">next_functions</text>
+<polyline points="285,482 285,556" fill="none" stroke="#6941C6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m1)"/>
+<rect x="210" y="560" width="150" height="52" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2.5"/>
+<text x="285" y="590.875" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">AccumulateGrad</text>
+<text x="376" y="592" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">writes the result into W.grad</text>
+<rect x="545" y="492" width="83.85" height="28" rx="14" fill="#FDEFCB" stroke="#B26A00" stroke-width="1.5"/>
+<text x="586.925" y="511.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" fill="#101828" text-anchor="middle" xml:space="preserve">saves y</text>
+<rect x="62" y="438" width="109.5" height="28" rx="14" fill="#FDEFCB" stroke="#B26A00" stroke-width="1.5"/>
+<text x="116.75" y="457.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" fill="#101828" text-anchor="middle" xml:space="preserve">saves x, W</text>
+<text x="640" y="600" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">loss.backward() walks the nodes from right to left,</text>
+<text x="640" y="626" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">multiplying gradients as it goes.</text></svg>

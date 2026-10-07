@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="A 4 by 4 matrix on four GPUs under Replicate, Shard(0) and Partial placements"><title>A 4 by 4 matrix on four GPUs under Replicate, Shard(0) and Partial placements</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">DTensor: one logical tensor spread over many GPUs</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Each placement says how the real data relates to the logical tensor.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">20 / 26</text>
+<rect x="56" y="140" width="375" height="392" rx="4" fill="#FFFFFF" stroke="#2F5BEA" stroke-width="2.5"/>
+<text x="76" y="178" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="700" fill="#2F5BEA" text-anchor="start" xml:space="preserve">Replicate()</text>
+<text x="76" y="202" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">every GPU holds everything</text>
+<rect x="76" y="222" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="86" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 0</text>
+<rect x="124" y="254" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="140" y="254" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="156" y="254" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="172" y="254" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="124" y="270" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="140" y="270" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="156" y="270" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="172" y="270" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="124" y="286" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="140" y="286" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="156" y="286" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="172" y="286" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="124" y="302" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="140" y="302" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="156" y="302" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="172" y="302" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="251" y="222" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="261" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 1</text>
+<rect x="299" y="254" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="315" y="254" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="331" y="254" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="347" y="254" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="299" y="270" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="315" y="270" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="331" y="270" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="347" y="270" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="299" y="286" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="315" y="286" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="331" y="286" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="347" y="286" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="299" y="302" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="315" y="302" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="331" y="302" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="347" y="302" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="76" y="344" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="86" y="364" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 2</text>
+<rect x="124" y="376" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="140" y="376" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="156" y="376" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="172" y="376" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="124" y="392" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="140" y="392" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="156" y="392" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="172" y="392" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="124" y="408" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="140" y="408" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="156" y="408" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="172" y="408" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="124" y="424" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="140" y="424" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="156" y="424" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="172" y="424" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="251" y="344" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="261" y="364" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 3</text>
+<rect x="299" y="376" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="315" y="376" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="331" y="376" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="347" y="376" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="299" y="392" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="315" y="392" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="331" y="392" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="347" y="392" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="299" y="408" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="315" y="408" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="331" y="408" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="347" y="408" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="299" y="424" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="315" y="424" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="331" y="424" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<rect x="347" y="424" width="16" height="16" rx="0" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="1"/>
+<text x="76" y="480" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Used for small things such as norm</text>
+<text x="76" y="500.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">weights. Costs memory but needs no</text>
+<text x="76" y="520.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">communication.</text>
+<rect x="451" y="140" width="375" height="392" rx="4" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="2.5"/>
+<text x="471" y="178" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">Shard(0)</text>
+<text x="471" y="202" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">each GPU holds a slice of the rows</text>
+<rect x="471" y="222" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="481" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 0</text>
+<rect x="519" y="254" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="535" y="254" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="551" y="254" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="567" y="254" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="519" y="270" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="535" y="270" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="551" y="270" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="567" y="270" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="519" y="286" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="535" y="286" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="551" y="286" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="567" y="286" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="519" y="302" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="535" y="302" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="551" y="302" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="567" y="302" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<text x="595" y="288" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">row 0</text>
+<rect x="646" y="222" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="656" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 1</text>
+<rect x="694" y="254" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="710" y="254" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="726" y="254" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="742" y="254" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="694" y="270" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="710" y="270" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="726" y="270" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="742" y="270" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="694" y="286" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="710" y="286" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="726" y="286" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="742" y="286" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="694" y="302" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="710" y="302" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="726" y="302" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="742" y="302" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<text x="770" y="288" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">row 1</text>
+<rect x="471" y="344" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="481" y="364" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 2</text>
+<rect x="519" y="376" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="535" y="376" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="551" y="376" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="567" y="376" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="519" y="392" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="535" y="392" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="551" y="392" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="567" y="392" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="519" y="408" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="535" y="408" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="551" y="408" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="567" y="408" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="519" y="424" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="535" y="424" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="551" y="424" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="567" y="424" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<text x="595" y="410" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">row 2</text>
+<rect x="646" y="344" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="656" y="364" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 3</text>
+<rect x="694" y="376" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="710" y="376" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="726" y="376" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="742" y="376" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="694" y="392" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="710" y="392" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="726" y="392" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="742" y="392" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="694" y="408" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="710" y="408" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="726" y="408" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="742" y="408" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="694" y="424" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="710" y="424" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="726" y="424" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<rect x="742" y="424" width="16" height="16" rx="0" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="1"/>
+<text x="770" y="410" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#EE4C2C" text-anchor="start" xml:space="preserve">row 3</text>
+<text x="471" y="480" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Memory per GPU drops by 4x. Reading a</text>
+<text x="471" y="500.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">full row means gathering the slices</text>
+<text x="471" y="520.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">first.</text>
+<rect x="846" y="140" width="375" height="392" rx="4" fill="#FFFFFF" stroke="#B26A00" stroke-width="2.5"/>
+<text x="866" y="178" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="700" fill="#B26A00" text-anchor="start" xml:space="preserve">Partial()</text>
+<text x="866" y="202" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">each GPU holds one term of a sum</text>
+<rect x="866" y="222" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="876" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 0</text>
+<rect x="914" y="254" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="930" y="254" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="946" y="254" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="962" y="254" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="914" y="270" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="930" y="270" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="946" y="270" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="962" y="270" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="914" y="286" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="930" y="286" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="946" y="286" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="962" y="286" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="914" y="302" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="930" y="302" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="946" y="302" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="962" y="302" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<text x="990" y="288" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#B26A00" text-anchor="start" xml:space="preserve">part</text>
+<rect x="1041" y="222" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="1051" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 1</text>
+<rect x="1089" y="254" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1105" y="254" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1121" y="254" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1137" y="254" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1089" y="270" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1105" y="270" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1121" y="270" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1137" y="270" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1089" y="286" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1105" y="286" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1121" y="286" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1137" y="286" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1089" y="302" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1105" y="302" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1121" y="302" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1137" y="302" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<text x="1165" y="288" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#B26A00" text-anchor="start" xml:space="preserve">part</text>
+<rect x="866" y="344" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="876" y="364" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 2</text>
+<rect x="914" y="376" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="930" y="376" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="946" y="376" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="962" y="376" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="914" y="392" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="930" y="392" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="946" y="392" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="962" y="392" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="914" y="408" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="930" y="408" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="946" y="408" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="962" y="408" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="914" y="424" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="930" y="424" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="946" y="424" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="962" y="424" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<text x="990" y="410" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#B26A00" text-anchor="start" xml:space="preserve">part</text>
+<rect x="1041" y="344" width="160" height="108" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="1051" y="364" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#55607A" text-anchor="start" xml:space="preserve">GPU 3</text>
+<rect x="1089" y="376" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1105" y="376" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1121" y="376" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1137" y="376" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1089" y="392" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1105" y="392" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1121" y="392" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1137" y="392" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1089" y="408" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1105" y="408" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1121" y="408" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1137" y="408" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1089" y="424" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1105" y="424" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1121" y="424" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<rect x="1137" y="424" width="16" height="16" rx="0" fill="#FDEFCB" stroke="#B26A00" stroke-width="1"/>
+<text x="1165" y="410" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#B26A00" text-anchor="start" xml:space="preserve">part</text>
+<text x="866" y="480" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">An all-reduce turns it into Replicate.</text>
+<text x="866" y="500.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">A reduce-scatter turns it into Shard.</text>
+<rect x="56" y="556" width="1168" height="112" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2.5"/>
+<text x="76" y="590" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Device mesh</text>
+<text x="76" y="618" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">A grid of GPUs with named axes, for example init_device_mesh("cuda", (2, 4), mesh_dim_names=("dp", "tp")).</text>
+<text x="76" y="644" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">A DTensor has one placement per mesh axis. Every operator has a sharding rule that says which collectives to insert.</text></svg>

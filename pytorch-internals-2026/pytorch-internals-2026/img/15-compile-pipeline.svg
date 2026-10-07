@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="torch.compile pipeline: Dynamo, AOTAutograd, Inductor, then kernels"><title>torch.compile pipeline: Dynamo, AOTAutograd, Inductor, then kernels</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#101828"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">torch.compile: from Python to fused kernels</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Three programs run in a row, then your kernels run.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">15 / 26</text>
+<rect x="62" y="150" width="250" height="220" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2.5"/>
+<text x="78" y="186" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">TorchDynamo</text>
+<text x="78" y="214" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Reads Python bytecode and</text>
+<text x="78" y="235" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">records the tensor</text>
+<text x="78" y="256" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">operations into an FX</text>
+<text x="78" y="277" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">graph. Adds guards.</text>
+<text x="78" y="354" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">torch/_dynamo/</text>
+<polyline points="314,260 362,260" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<line x1="338" y1="266" x2="338" y2="392" stroke="#9AA6BD" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+<rect x="364" y="150" width="250" height="220" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2.5"/>
+<text x="380" y="186" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">AOTAutograd</text>
+<text x="380" y="214" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Traces forward and</text>
+<text x="380" y="235" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">backward. Removes</text>
+<text x="380" y="256" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">in-place edits. Lowers to</text>
+<text x="380" y="277" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Core ATen. Splits two</text>
+<text x="380" y="298" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">graphs.</text>
+<text x="380" y="354" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">torch/_functorch/</text>
+<polyline points="616,260 664,260" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<line x1="640" y1="266" x2="640" y2="392" stroke="#9AA6BD" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+<rect x="666" y="150" width="250" height="220" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2.5"/>
+<text x="682" y="186" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Inductor</text>
+<text x="682" y="214" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Fuses operators, picks</text>
+<text x="682" y="235" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">tile sizes, and writes</text>
+<text x="682" y="256" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">the kernel source code.</text>
+<text x="682" y="354" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">torch/_inductor/</text>
+<polyline points="918,260 966,260" fill="none" stroke="#101828" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<line x1="942" y1="266" x2="942" y2="392" stroke="#9AA6BD" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 4"/>
+<rect x="968" y="150" width="250" height="220" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2.5"/>
+<text x="984" y="186" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Kernels</text>
+<text x="984" y="214" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">Triton on GPUs, C++ with</text>
+<text x="984" y="235" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">OpenMP on CPUs, and</text>
+<text x="984" y="256" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">CuTeDSL (NVGEMM) for</text>
+<text x="984" y="277" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">matrix multiplies. Cached</text>
+<text x="984" y="298" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">on disk.</text>
+<text x="984" y="354" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">runs on your hardware</text>
+<rect x="250.19" y="392" width="175.62" height="30" rx="15" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="338" y="412" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#101828" text-anchor="middle" xml:space="preserve">FX graph and guards</text>
+<rect x="520.27" y="392" width="239.46" height="30" rx="15" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="640" y="412" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#101828" text-anchor="middle" xml:space="preserve">forward and backward graphs</text>
+<rect x="858.18" y="392" width="167.64" height="30" rx="15" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="1.5"/>
+<text x="942" y="412" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" fill="#101828" text-anchor="middle" xml:space="preserve">kernel source code</text>
+<rect x="62" y="460" width="560" height="196" rx="6" fill="#0F172A"/>
+<text x="80" y="490.45" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">compiled = torch.compile(model)</text>
+<text x="80" y="515.95" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">out = compiled(x)   # compiles now</text>
+<text x="80" y="541.45" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve">out = compiled(x)   # fast path</text>
+<text x="80" y="566.95" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#E2E8F0" text-anchor="start" xml:space="preserve"></text>
+<text x="80" y="592.45" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#94A3B8" text-anchor="start" xml:space="preserve"># See the generated kernels:</text>
+<text x="80" y="617.95" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#94A3B8" text-anchor="start" xml:space="preserve"># TORCH_LOGS=output_code python train.py</text>
+<rect x="660" y="460" width="558" height="196" rx="4" fill="#FFFFFF" stroke="#0E9384" stroke-width="2.5"/>
+<text x="680" y="494" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">Two ideas used at every stage</text>
+<text x="680" y="524" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">FakeTensor: a tensor with a shape, dtype and device but</text>
+<text x="680" y="546.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">no data, so the compiler can trace without doing the</text>
+<text x="680" y="568.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">math.</text>
+<text x="680" y="600" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">SymInt: a symbolic size such as s0, so one graph can</text>
+<text x="680" y="622.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#101828" text-anchor="start" xml:space="preserve">serve many batch sizes.</text></svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="PyTorch drawn as six stacked layers with three side systems: compile, distributed, export"><title>PyTorch drawn as six stacked layers with three side systems: compile, distributed, export</title><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#F6F8FB"/><path d="M40 0H0V40" fill="none" stroke="#E5EAF2" stroke-width="1"/></pattern><marker id="m0" viewBox="0 0 12 10" refX="9" refY="5" markerWidth="13" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#55607A"/></marker></defs><rect width="1280" height="720" fill="url(#grid)"/>
+<rect x="56" y="40" width="6" height="46" rx="2" fill="#EE4C2C"/>
+<text x="78" y="78" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#101828" text-anchor="start" xml:space="preserve">PyTorch is a stack of layers</text>
+<text x="78" y="110" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">Each layer calls the one below it. Three systems sit beside the stack.</text>
+<text x="56" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="start" xml:space="preserve">PyTorch Internals, 2026 edition</text>
+<text x="1224" y="700" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" fill="#55607A" text-anchor="end" xml:space="preserve">2 / 26</text>
+<rect x="56" y="150" width="724" height="66" rx="4" fill="#E3EAFD" stroke="#2F5BEA" stroke-width="2"/>
+<text x="418" y="177.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Your code</text>
+<text x="418" y="200.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">nn.Module, optimizers, the training loop</text>
+<polyline points="418,216 418,226" fill="none" stroke="#55607A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="56" y="226" width="724" height="66" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="2"/>
+<text x="418" y="253.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Python frontend: torch/</text>
+<text x="418" y="276.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">tensors, torch.nn, torch.optim, torch.autograd</text>
+<polyline points="418,292 418,302" fill="none" stroke="#55607A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="56" y="302" width="724" height="66" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="2"/>
+<text x="418" y="329.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">C++ bindings and autograd engine: torch/csrc/</text>
+<text x="418" y="352.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">Python arguments in, tensors out; backward() runs here</text>
+<polyline points="418,368 418,378" fill="none" stroke="#55607A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="56" y="378" width="724" height="66" rx="4" fill="#FDE4DD" stroke="#EE4C2C" stroke-width="2"/>
+<text x="418" y="405.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Dispatcher: c10/</text>
+<text x="418" y="428.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">looks at the inputs and picks which kernel runs</text>
+<polyline points="418,444 418,454" fill="none" stroke="#55607A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="56" y="454" width="724" height="66" rx="4" fill="#FFFFFF" stroke="#9AA6BD" stroke-width="2"/>
+<text x="418" y="481.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Operator library: aten/</text>
+<text x="418" y="504.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">thousands of operators, one implementation per backend</text>
+<polyline points="418,520 418,530" fill="none" stroke="#55607A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#m0)"/>
+<rect x="56" y="530" width="724" height="66" rx="4" fill="#E9EDF4" stroke="#9AA6BD" stroke-width="2"/>
+<text x="418" y="557.55" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">Kernels and hardware</text>
+<text x="418" y="580.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">CPU (AVX, SVE), CUDA and ROCm, Metal (MPS), Intel XPU, others</text>
+<rect x="850" y="200" width="374" height="120" rx="4" fill="#D5F1EC" stroke="#0E9384" stroke-width="2"/>
+<text x="1037" y="243.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">torch.compile</text>
+<text x="1037" y="269.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">Dynamo, AOTAutograd, Inductor. Turns</text>
+<text x="1037" y="289.75" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">Python into fused kernels.</text>
+<line x1="780" y1="260" x2="850" y2="260" stroke="#0E9384" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 5"/>
+<rect x="850" y="340" width="374" height="120" rx="4" fill="#EADFFB" stroke="#6941C6" stroke-width="2"/>
+<text x="1037" y="383.25" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">torch.distributed</text>
+<text x="1037" y="409.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">c10d, DTensor, FSDP2. Many processes,</text>
+<text x="1037" y="429.75" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">many GPUs.</text>
+<line x1="780" y1="400" x2="850" y2="400" stroke="#6941C6" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 5"/>
+<rect x="850" y="480" width="374" height="120" rx="4" fill="#FDEFCB" stroke="#B26A00" stroke-width="2"/>
+<text x="1037" y="533.375" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#101828" text-anchor="middle" xml:space="preserve">torch.export, ExecuTorch</text>
+<text x="1037" y="559.625" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="400" fill="#55607A" text-anchor="middle" xml:space="preserve">A model you can ship without Python.</text>
+<line x1="780" y1="540" x2="850" y2="540" stroke="#B26A00" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 5"/></svg>
